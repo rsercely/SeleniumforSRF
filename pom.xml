@@ -1,0 +1,52 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>g1</groupId>
+    <artifactId>a1</artifactId>
+    <version>snap1</version>
+    <name>Selenium JUnit Test for SRF</name>
+    <description>This initial commit is just a pure Selenium test
+    Going forward, there will be a branch for remote SRF executin
+    and a branch for web SRF execution</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>2.53.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hpe.lft</groupId>
+            <artifactId>selenium-sdk</artifactId>
+            <version>14.3.0</version>
+        </dependency>
+    </dependencies>
+
+    <repositories>
+        <!--<repository>
+                <id>Your repository's ID</id>
+                    <name>Your repository's name</name>
+                    <url>URL of the repository containing the LeanFT jar files</url>
+            </repository>-->
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
