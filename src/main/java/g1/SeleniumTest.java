@@ -2,6 +2,10 @@ package g1;
 
 import static org.junit.Assert.*;
 
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.net.URL;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -33,23 +37,34 @@ public class SeleniumTest  {
 
     @Before
     public void setUp() throws Exception {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        RemoteWebDriver driver;
+
+
     }
 
     @After
     public void tearDown() throws Exception {
-        driver.close();
+        driver.quit();
     }
 
     @Test
     public void test() throws Exception {
+        DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+        capabilities.setVersion("latest");
+        capabilities.setCapability("platform", "Windows 8.1");
+        capabilities.setCapability("testName", "Selenium JAVA desktop");
+        capabilities.setCapability("SRF_CLIENT_ID", "t511780658_oauth2-ycYmLAZOUvnSDinyr2FK@hpe.com");
+        capabilities.setCapability("SRF_CLIENT_SECRET", "TVQJVju2fDFgU5y3yL2o");
+        capabilities.setCapability("resolution", "1366x768");
+        capabilities.setCapability("browserName", "FireFox");
+
+        driver = new RemoteWebDriver(new URL("https://ftaas.saas.hpe.com/wd/hub/"), capabilities);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.get("http://advantageonlineshopping.com/#");
         Thread.sleep(10*1000);
 
-        // this test will not run unless you add a click on the Speakers category
-        // you should use the Selenium OIC in order to creat the object identification Something like
-//      driver.findElement(org.openqa.selenium.By.xpath("//*[@id=\"speakersTxt\"]")).click();
+        driver.findElement(org.openqa.selenium.By.xpath("//*[@id=\"speakersTxt\"]")).click();
         driver.findElement(org.openqa.selenium.By.linkText("Bose Soundlink Bluetooth Speaker III")).click();
         driver.findElement(org.openqa.selenium.By.xpath("//DIV[@id=\"productProperties\"]/DIV/BUTTON[normalize-space()=\"ADD TO CART\"]")).click();
         Thread.sleep(5*1000);
