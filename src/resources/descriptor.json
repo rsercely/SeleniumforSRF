@@ -1,0 +1,6 @@
+[
+  {
+    "runnableClass": "g1.SeleniumTest",
+    "framework": "junit"
+  }
+]
