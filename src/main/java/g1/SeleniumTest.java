@@ -53,8 +53,8 @@ public class SeleniumTest  {
         capabilities.setVersion("latest");
         capabilities.setCapability("platform", "Windows 8.1");
         capabilities.setCapability("testName", "Selenium JAVA desktop");
-        capabilities.setCapability("SRF_CLIENT_ID", "t511780658_oauth2-ycYmLAZOUvnSDinyr2FK@hpe.com");
-        capabilities.setCapability("SRF_CLIENT_SECRET", "TVQJVju2fDFgU5y3yL2o");
+        capabilities.setCapability("SRF_CLIENT_ID", "<PLACEHOLDER_Your_SRF_Client_ID>");
+        capabilities.setCapability("SRF_CLIENT_SECRET", "PLACEHOLDER_Your_SRF_Secret");
         capabilities.setCapability("resolution", "1366x768");
         capabilities.setCapability("browserName", "FireFox");
 
