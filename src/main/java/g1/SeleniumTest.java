@@ -49,7 +49,7 @@ public class SeleniumTest  {
 
         // this test will not run unless you add a click on the Speakers category
         // you should use the Selenium OIC in order to creat the object identification Something like
-//      driver.findElement(org.openqa.selenium.By.xpath("//*[@id=\"speakersTxt\"]")).click();
+        driver.findElement(org.openqa.selenium.By.xpath("//*[@id=\"speakersTxt\"]")).click();
         driver.findElement(org.openqa.selenium.By.linkText("Bose Soundlink Bluetooth Speaker III")).click();
         driver.findElement(org.openqa.selenium.By.xpath("//DIV[@id=\"productProperties\"]/DIV/BUTTON[normalize-space()=\"ADD TO CART\"]")).click();
         Thread.sleep(5*1000);
